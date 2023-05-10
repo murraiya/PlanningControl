@@ -1,0 +1,2 @@
+planningcontrol
+-DCATKIN_DEVEL_PREFIX=/home/murraiya/PlanningControl/devel -DCMAKE_INSTALL_PREFIX=/home/murraiya/PlanningControl/install -G Unix Makefiles

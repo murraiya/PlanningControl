@@ -1,0 +1,8 @@
+prefix=/home/murraiya/PlanningControl/install
+
+Name: planningcontrol
+Description: Description of planningcontrol
+Version: 1.0.0
+Cflags: -I${prefix}/include
+Libs: -L${prefix}/lib 
+Requires: roscpp std_msgs

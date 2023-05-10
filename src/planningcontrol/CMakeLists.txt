@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.0.2)
-project(feature_pkg)
+project(planningcontrol)
 
 ## Compile as C++11, supported in ROS Kinetic and newer
 # add_compile_options(-std=c++11)
@@ -8,19 +8,17 @@ project(feature_pkg)
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
 
-SET(OpenCV_DIR /usr/local/include/opencv4)   
+#SET(OpenCV_DIR /usr/local/include/opencv4)   
 
 
 find_package(catkin REQUIRED COMPONENTS
   roscpp
-  cv_bridge
   sensor_msgs
   std_msgs
-  image_transport
 )
 
 ## System dependencies are found with CMake's conventions
-find_package(OpenCV 4.6.0 REQUIRED)
+# find_package(OpenCV 4.6.0 REQUIRED)
 
 ## Generate added messages and services with any dependencies listed here
 # generate_messages(
@@ -39,8 +37,9 @@ find_package(OpenCV 4.6.0 REQUIRED)
 ## CATKIN_DEPENDS: catkin_packages dependent projects also need
 ## DEPENDS: system dependencies of this project that dependent projects also need
 catkin_package(
-#  LIBRARIES feature_pkg
- CATKIN_DEPENDS roscpp std_msgs cv_bridge image_transport
+#  LIBRARIES pkg
+  INCLUDE_DIRS include
+  CATKIN_DEPENDS roscpp std_msgs
 # DEPENDS system_lib
 )
 
@@ -52,9 +51,7 @@ catkin_package(
 ## Your package locations should be listed before other locations
 include_directories(
   include
-  ${catkin_INCLUDE_DIRS}
-  ${OpenCV_INCLUDE_DIRS}
-  
+  ${catkin_INCLUDE_DIRS}  
 )
 
 ########################################
@@ -65,23 +62,19 @@ include_directories(
 # target_link_libraries(videoLoad ${catkin_LIBRARIES} ${OpenCV_LIBRARIES}) #(new_lib_file_name/need to link include)
 
 
-add_executable(videoLoad src/videoLoad.cpp)
-target_link_libraries(videoLoad ${catkin_LIBRARIES} ${OpenCV_LIBRARIES}) #(new_lib_file_name/need to link include)
+# Declare a C++ library
+add_library(readPath src/readPath.cpp )
+target_link_libraries(readPath ${catkin_LIBRARIES} )
 
-# add_executable(rawORB src/rawORB.cpp)
-# target_link_libraries(rawORB ${catkin_LIBRARIES} ${OpenCV_LIBRARIES})
+add_library(PurePursuit src/PurePursuit.cpp )
+target_link_libraries(PurePursuit ${catkin_LIBRARIES} )
 
-# add_executable(rawSIFT src/rawSIFT.cpp)
-# target_link_libraries(rawSIFT ${catkin_LIBRARIES} ${OpenCV_LIBRARIES})
+
+add_executable(main src/main.cpp)
+target_link_libraries(main ${catkin_LIBRARIES} readPath PurePursuit) #(new_lib_file_name/need to link include)
 
 # add_library( )
 # target_link_libraries(ORB ${catkin_LIBRARIES} ${OpenCV_LIBRARIES})
-
-add_executable(ORB src/ORB.cpp)
-target_link_libraries(ORB ${catkin_LIBRARIES} ${OpenCV_LIBRARIES})
-
-add_executable(SIFT src/SIFT.cpp)
-target_link_libraries(SIFT ${catkin_LIBRARIES} ${OpenCV_LIBRARIES})
 
 ## Declare a C++ library
 # add_library(${PROJECT_NAME}
@@ -147,23 +140,3 @@ target_link_libraries(SIFT ${catkin_LIBRARIES} ${OpenCV_LIBRARIES})
 #   FILES_MATCHING PATTERN "*.h"
 #   PATTERN ".svn" EXCLUDE
 # )
-
-## Mark other files for installation (e.g. launch and bag files, etc.)
-# install(FILES
-#   # myfile1
-#   # myfile2
-#   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
-# )
-
-#############
-## Testing ##
-#############
-
-## Add gtest based cpp test target and link libraries
-# catkin_add_gtest(${PROJECT_NAME}-test test/test_feature_pkg.cpp)
-# if(TARGET ${PROJECT_NAME}-test)
-#   target_link_libraries(${PROJECT_NAME}-test ${PROJECT_NAME})
-# endif()
-
-## Add folders to be run by python nosetests
-# catkin_add_nosetests(test)

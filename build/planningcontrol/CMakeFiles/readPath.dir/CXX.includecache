@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/murraiya/PlanningControl/src/planningcontrol/include/planningcontrol/readPath.h
+iostream
+-
+fstream
+-
+string
+-
+cstring
+-
+array
+-
+vector
+-
+
+/home/murraiya/PlanningControl/src/planningcontrol/src/readPath.cpp
+planningcontrol/readPath.h
+/home/murraiya/PlanningControl/src/planningcontrol/src/planningcontrol/readPath.h
+

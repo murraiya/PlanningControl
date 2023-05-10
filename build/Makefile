@@ -454,6 +454,19 @@ rosgraph_msgs_generate_messages_nodejs/fast:
 .PHONY : rosgraph_msgs_generate_messages_nodejs/fast
 
 #=============================================================================
+# Target rules for targets named roscpp_generate_messages_eus
+
+# Build rule for target.
+roscpp_generate_messages_eus: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 roscpp_generate_messages_eus
+.PHONY : roscpp_generate_messages_eus
+
+# fast build rule for target.
+roscpp_generate_messages_eus/fast:
+	$(MAKE) -f planningcontrol/CMakeFiles/roscpp_generate_messages_eus.dir/build.make planningcontrol/CMakeFiles/roscpp_generate_messages_eus.dir/build
+.PHONY : roscpp_generate_messages_eus/fast
+
+#=============================================================================
 # Target rules for targets named sensor_msgs_generate_messages_eus
 
 # Build rule for target.
@@ -584,32 +597,6 @@ geometry_msgs_generate_messages_eus/fast:
 .PHONY : geometry_msgs_generate_messages_eus/fast
 
 #=============================================================================
-# Target rules for targets named roscpp_generate_messages_eus
-
-# Build rule for target.
-roscpp_generate_messages_eus: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 roscpp_generate_messages_eus
-.PHONY : roscpp_generate_messages_eus
-
-# fast build rule for target.
-roscpp_generate_messages_eus/fast:
-	$(MAKE) -f planningcontrol/CMakeFiles/roscpp_generate_messages_eus.dir/build.make planningcontrol/CMakeFiles/roscpp_generate_messages_eus.dir/build
-.PHONY : roscpp_generate_messages_eus/fast
-
-#=============================================================================
-# Target rules for targets named readPath
-
-# Build rule for target.
-readPath: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 readPath
-.PHONY : readPath
-
-# fast build rule for target.
-readPath/fast:
-	$(MAKE) -f planningcontrol/CMakeFiles/readPath.dir/build.make planningcontrol/CMakeFiles/readPath.dir/build
-.PHONY : readPath/fast
-
-#=============================================================================
 # Target rules for targets named PurePursuit
 
 # Build rule for target.
@@ -683,6 +670,7 @@ help:
 	@echo "... roscpp_generate_messages_py"
 	@echo "... std_msgs_generate_messages_lisp"
 	@echo "... rosgraph_msgs_generate_messages_nodejs"
+	@echo "... roscpp_generate_messages_eus"
 	@echo "... sensor_msgs_generate_messages_eus"
 	@echo "... roscpp_generate_messages_cpp"
 	@echo "... sensor_msgs_generate_messages_lisp"
@@ -693,8 +681,6 @@ help:
 	@echo "... sensor_msgs_generate_messages_cpp"
 	@echo "... std_msgs_generate_messages_nodejs"
 	@echo "... geometry_msgs_generate_messages_eus"
-	@echo "... roscpp_generate_messages_eus"
-	@echo "... readPath"
 	@echo "... PurePursuit"
 	@echo "... main"
 	@echo "... rosgraph_msgs_generate_messages_cpp"

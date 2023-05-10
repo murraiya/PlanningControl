@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/murraiya/PlanningControl/src/planningcontrol/include/planningcontrol/readPath.h
+/home/murraiya/PlanningControl/src/planningcontrol/src/readPath.cpp
 iostream
 -
 fstream
@@ -19,8 +19,4 @@ array
 -
 vector
 -
-
-/home/murraiya/PlanningControl/src/planningcontrol/src/readPath.cpp
-planningcontrol/readPath.h
-/home/murraiya/PlanningControl/src/planningcontrol/src/planningcontrol/readPath.h
 

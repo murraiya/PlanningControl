@@ -96,7 +96,6 @@ main_EXTERNAL_OBJECTS =
 /home/murraiya/PlanningControl/devel/lib/planningcontrol/main: /usr/lib/x86_64-linux-gnu/libboost_system.so.1.71.0
 /home/murraiya/PlanningControl/devel/lib/planningcontrol/main: /usr/lib/x86_64-linux-gnu/libboost_thread.so.1.71.0
 /home/murraiya/PlanningControl/devel/lib/planningcontrol/main: /usr/lib/x86_64-linux-gnu/libconsole_bridge.so.0.4
-/home/murraiya/PlanningControl/devel/lib/planningcontrol/main: /home/murraiya/PlanningControl/devel/lib/libreadPath.so
 /home/murraiya/PlanningControl/devel/lib/planningcontrol/main: /home/murraiya/PlanningControl/devel/lib/libPurePursuit.so
 /home/murraiya/PlanningControl/devel/lib/planningcontrol/main: /opt/ros/noetic/lib/libroscpp.so
 /home/murraiya/PlanningControl/devel/lib/planningcontrol/main: /usr/lib/x86_64-linux-gnu/libpthread.so

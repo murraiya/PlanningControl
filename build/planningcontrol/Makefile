@@ -90,17 +90,6 @@ list_install_components/fast: list_install_components
 
 .PHONY : list_install_components/fast
 
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
-.PHONY : edit_cache
-
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-
-.PHONY : edit_cache/fast
-
 # Special rule for the target install/local
 install/local: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
@@ -134,6 +123,17 @@ test:
 test/fast: test
 
 .PHONY : test/fast
+
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -363,6 +363,21 @@ rosgraph_msgs_generate_messages_nodejs/fast:
 .PHONY : rosgraph_msgs_generate_messages_nodejs/fast
 
 # Convenience name for target.
+planningcontrol/CMakeFiles/roscpp_generate_messages_eus.dir/rule:
+	cd /home/murraiya/PlanningControl/build && $(MAKE) -f CMakeFiles/Makefile2 planningcontrol/CMakeFiles/roscpp_generate_messages_eus.dir/rule
+.PHONY : planningcontrol/CMakeFiles/roscpp_generate_messages_eus.dir/rule
+
+# Convenience name for target.
+roscpp_generate_messages_eus: planningcontrol/CMakeFiles/roscpp_generate_messages_eus.dir/rule
+
+.PHONY : roscpp_generate_messages_eus
+
+# fast build rule for target.
+roscpp_generate_messages_eus/fast:
+	cd /home/murraiya/PlanningControl/build && $(MAKE) -f planningcontrol/CMakeFiles/roscpp_generate_messages_eus.dir/build.make planningcontrol/CMakeFiles/roscpp_generate_messages_eus.dir/build
+.PHONY : roscpp_generate_messages_eus/fast
+
+# Convenience name for target.
 planningcontrol/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule:
 	cd /home/murraiya/PlanningControl/build && $(MAKE) -f CMakeFiles/Makefile2 planningcontrol/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule
 .PHONY : planningcontrol/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule
@@ -513,36 +528,6 @@ geometry_msgs_generate_messages_eus/fast:
 .PHONY : geometry_msgs_generate_messages_eus/fast
 
 # Convenience name for target.
-planningcontrol/CMakeFiles/roscpp_generate_messages_eus.dir/rule:
-	cd /home/murraiya/PlanningControl/build && $(MAKE) -f CMakeFiles/Makefile2 planningcontrol/CMakeFiles/roscpp_generate_messages_eus.dir/rule
-.PHONY : planningcontrol/CMakeFiles/roscpp_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-roscpp_generate_messages_eus: planningcontrol/CMakeFiles/roscpp_generate_messages_eus.dir/rule
-
-.PHONY : roscpp_generate_messages_eus
-
-# fast build rule for target.
-roscpp_generate_messages_eus/fast:
-	cd /home/murraiya/PlanningControl/build && $(MAKE) -f planningcontrol/CMakeFiles/roscpp_generate_messages_eus.dir/build.make planningcontrol/CMakeFiles/roscpp_generate_messages_eus.dir/build
-.PHONY : roscpp_generate_messages_eus/fast
-
-# Convenience name for target.
-planningcontrol/CMakeFiles/readPath.dir/rule:
-	cd /home/murraiya/PlanningControl/build && $(MAKE) -f CMakeFiles/Makefile2 planningcontrol/CMakeFiles/readPath.dir/rule
-.PHONY : planningcontrol/CMakeFiles/readPath.dir/rule
-
-# Convenience name for target.
-readPath: planningcontrol/CMakeFiles/readPath.dir/rule
-
-.PHONY : readPath
-
-# fast build rule for target.
-readPath/fast:
-	cd /home/murraiya/PlanningControl/build && $(MAKE) -f planningcontrol/CMakeFiles/readPath.dir/build.make planningcontrol/CMakeFiles/readPath.dir/build
-.PHONY : readPath/fast
-
-# Convenience name for target.
 planningcontrol/CMakeFiles/PurePursuit.dir/rule:
 	cd /home/murraiya/PlanningControl/build && $(MAKE) -f CMakeFiles/Makefile2 planningcontrol/CMakeFiles/PurePursuit.dir/rule
 .PHONY : planningcontrol/CMakeFiles/PurePursuit.dir/rule
@@ -641,33 +626,6 @@ src/main.cpp.s:
 	cd /home/murraiya/PlanningControl/build && $(MAKE) -f planningcontrol/CMakeFiles/main.dir/build.make planningcontrol/CMakeFiles/main.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
-src/readPath.o: src/readPath.cpp.o
-
-.PHONY : src/readPath.o
-
-# target to build an object file
-src/readPath.cpp.o:
-	cd /home/murraiya/PlanningControl/build && $(MAKE) -f planningcontrol/CMakeFiles/readPath.dir/build.make planningcontrol/CMakeFiles/readPath.dir/src/readPath.cpp.o
-.PHONY : src/readPath.cpp.o
-
-src/readPath.i: src/readPath.cpp.i
-
-.PHONY : src/readPath.i
-
-# target to preprocess a source file
-src/readPath.cpp.i:
-	cd /home/murraiya/PlanningControl/build && $(MAKE) -f planningcontrol/CMakeFiles/readPath.dir/build.make planningcontrol/CMakeFiles/readPath.dir/src/readPath.cpp.i
-.PHONY : src/readPath.cpp.i
-
-src/readPath.s: src/readPath.cpp.s
-
-.PHONY : src/readPath.s
-
-# target to generate assembly for a file
-src/readPath.cpp.s:
-	cd /home/murraiya/PlanningControl/build && $(MAKE) -f planningcontrol/CMakeFiles/readPath.dir/build.make planningcontrol/CMakeFiles/readPath.dir/src/readPath.cpp.s
-.PHONY : src/readPath.cpp.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -677,7 +635,6 @@ help:
 	@echo "... install/strip"
 	@echo "... install"
 	@echo "... list_install_components"
-	@echo "... edit_cache"
 	@echo "... rosgraph_msgs_generate_messages_py"
 	@echo "... roscpp_generate_messages_lisp"
 	@echo "... geometry_msgs_generate_messages_cpp"
@@ -692,6 +649,8 @@ help:
 	@echo "... roscpp_generate_messages_py"
 	@echo "... std_msgs_generate_messages_lisp"
 	@echo "... rosgraph_msgs_generate_messages_nodejs"
+	@echo "... rebuild_cache"
+	@echo "... roscpp_generate_messages_eus"
 	@echo "... sensor_msgs_generate_messages_eus"
 	@echo "... roscpp_generate_messages_cpp"
 	@echo "... sensor_msgs_generate_messages_lisp"
@@ -702,22 +661,17 @@ help:
 	@echo "... sensor_msgs_generate_messages_cpp"
 	@echo "... std_msgs_generate_messages_nodejs"
 	@echo "... geometry_msgs_generate_messages_eus"
-	@echo "... rebuild_cache"
-	@echo "... roscpp_generate_messages_eus"
-	@echo "... readPath"
 	@echo "... PurePursuit"
 	@echo "... main"
 	@echo "... rosgraph_msgs_generate_messages_cpp"
 	@echo "... test"
+	@echo "... edit_cache"
 	@echo "... src/PurePursuit.o"
 	@echo "... src/PurePursuit.i"
 	@echo "... src/PurePursuit.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
-	@echo "... src/readPath.o"
-	@echo "... src/readPath.i"
-	@echo "... src/readPath.s"
 .PHONY : help
 
 

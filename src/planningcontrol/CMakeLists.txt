@@ -14,6 +14,7 @@ project(planningcontrol)
 find_package(catkin REQUIRED COMPONENTS
   roscpp
   sensor_msgs
+  geometry_msgs
   std_msgs
 )
 
@@ -39,7 +40,7 @@ find_package(catkin REQUIRED COMPONENTS
 catkin_package(
 #  LIBRARIES pkg
   INCLUDE_DIRS include
-  CATKIN_DEPENDS roscpp std_msgs
+  CATKIN_DEPENDS roscpp std_msgs geometry_msgs
 # DEPENDS system_lib
 )
 
@@ -63,15 +64,12 @@ include_directories(
 
 
 # Declare a C++ library
-add_library(readPath src/readPath.cpp )
-target_link_libraries(readPath ${catkin_LIBRARIES} )
 
 add_library(PurePursuit src/PurePursuit.cpp )
 target_link_libraries(PurePursuit ${catkin_LIBRARIES} )
 
-
 add_executable(main src/main.cpp)
-target_link_libraries(main ${catkin_LIBRARIES} readPath PurePursuit) #(new_lib_file_name/need to link include)
+target_link_libraries(main ${catkin_LIBRARIES} PurePursuit) #(new_lib_file_name/need to link include)
 
 # add_library( )
 # target_link_libraries(ORB ${catkin_LIBRARIES} ${OpenCV_LIBRARIES})

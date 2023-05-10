@@ -1,5 +1,9 @@
-#include "planningcontrol/readPath.h"
-
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <cstring>
+#include <array>
+#include <vector>
 
 std::vector<std::array<float,2>>& readPath(){
 
@@ -20,7 +24,6 @@ std::vector<std::array<float,2>>& readPath(){
         std::cout<<point.at(0)<<point.at(1)<<'\n';
         path.push_back(point);
     }
-
     
     return path;
 }
